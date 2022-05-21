@@ -78,7 +78,9 @@ const MainBody = () => {
             </span>
           </div>
       </div>
-      <div className="card"></div>
+      <div className="card">
+        <h1>Hello world</h1>
+      </div>
     </div>
   );
 };
