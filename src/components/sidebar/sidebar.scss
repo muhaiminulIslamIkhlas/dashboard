@@ -1,4 +1,70 @@
 @import "../../styles/index.scss";
-.test{
-    color: $test-color;
+
+.sidebar {
+    border-radius: 1rem;
+    box-shadow: 0 1.6rem 3rem rgb(0, 0, 0, 0.1);
+    margin: 10px;
+    overflow: hidden;
+    width: 195px;
+    height: calc(100vh - 25px);
+    background-color: #05050b;
+    border-right: 0 solid #05050b;
+    bottom: 0;
+    color: #fff;
+
+    &__item {
+        height: 48.75px;
+        padding: 4.87px 9.75px;
+        position: relative;
+    }
+
+    &__itemWrapper {
+        color: #e7eef8;
+        display: flex;
+        font-size: 11.37px;
+        font-weight: 600;
+        padding: 9.75px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            background-color: #19191f;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+
+
+    &__icon {
+        font-size: 20px;
+        margin-right: 13px;
+    }
+
+    &__text {
+        position: relative;
+        top: 4px;
+    }
+
+    &__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__logoWrapper {
+        height: 65px;
+        padding: 12.87px 10px 0 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        color: #fff;
+    }
+
+    &__arrow {
+        fill: #fff;
+        font-size: 30px;
+        position: relative;
+        top: -10px;
+    }
 }

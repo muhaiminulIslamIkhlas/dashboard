@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
 import Sidebar from "./components/sidebar/sidebar";
-import './App.scss';
+import "./App.scss";
+import MainBody from "./components/mainBody/mainBody";
 
 function App() {
   return (
     <div className="App">
-      <Sidebar>
-        <h1>Hello World</h1>
-      </Sidebar>
+      <div className="app__wrapper">
+        <Sidebar />
+        <MainBody />
+      </div>
     </div>
   );
 }
