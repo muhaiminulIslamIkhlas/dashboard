@@ -8,6 +8,7 @@ import { FcAdvertising } from "react-icons/fc";
 import { FcAddImage } from "react-icons/fc";
 import { FcAddDatabase } from "react-icons/fc";
 import { FcAssistant } from "react-icons/fc";
+import LoginForm from "../organism/loginForm";
 const MainBody = () => {
   return (
     <div className="mainBody">
@@ -79,7 +80,7 @@ const MainBody = () => {
           </div>
       </div>
       <div className="card">
-        <h1>Hello world</h1>
+        <LoginForm />
       </div>
     </div>
   );
