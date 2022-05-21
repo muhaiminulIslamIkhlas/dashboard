@@ -1,11 +1,11 @@
 .mainBody {
-    width: calc(100% - 205px);
+    // width: calc(100% - 205px);
     margin-top: 10px;
     padding-right: 10px;
+    width: 100%;
 }
 
 .card {
-    width: 200px;
     height: 200px;
     border-radius: 16px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

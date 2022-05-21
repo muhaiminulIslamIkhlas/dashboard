@@ -5,12 +5,20 @@
     box-shadow: 0 1.6rem 3rem rgb(0, 0, 0, 0.1);
     margin: 10px;
     overflow: hidden;
-    width: 195px;
     height: calc(100vh - 25px);
     background-color: #05050b;
     border-right: 0 solid #05050b;
     bottom: 0;
     color: #fff;
+    // transition: width 0.3s ease-in-out;
+
+    &--close {
+        width: 65px;
+    }
+
+    &--active {
+        width: 195px;
+    }
 
     &__item {
         height: 48.75px;
@@ -26,13 +34,13 @@
         padding: 9.75px;
         transition: all 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             background-color: #19191f;
             border-radius: 8px;
             cursor: pointer;
+            color: #f9dfdf;
         }
     }
-
 
     &__icon {
         font-size: 20px;
@@ -42,12 +50,21 @@
     &__text {
         position: relative;
         top: 4px;
+        .sidebar--close & {
+            display: none;
+        }
     }
 
     &__arrow {
         display: flex;
         align-items: center;
         justify-content: center;
+        // transition: transform 0.4s ease-out;
+
+        .sidebar--close & {
+            left: 6px;
+            transform: rotate(180deg);
+        }
     }
 
     &__logoWrapper {
