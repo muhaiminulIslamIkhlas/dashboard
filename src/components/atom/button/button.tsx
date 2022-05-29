@@ -1,4 +1,5 @@
 import React from "react";
+import './button.scss';
 
 interface ButtonProps {
   label: string;
@@ -8,7 +9,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, disabled }) => {
   return (
-    <button onClick={onClick} disabled={disabled}>
+    <button className="a-button" onClick={onClick} disabled={disabled}>
       {label}
     </button>
   );

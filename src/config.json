@@ -1,3 +1,3 @@
 {
-  "apiEndpoint": "https://jsonplaceholder.typicode.com/posts"
+  "apiUrl": "http://localhost/jwt/public/api/"
 }

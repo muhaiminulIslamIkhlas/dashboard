@@ -6,6 +6,7 @@ import { FaLayerGroup } from "react-icons/fa";
 import { MdRedeem } from "react-icons/md";
 import { SiBbciplayer } from "react-icons/si";
 import { AiOutlineUsergroupDelete } from "react-icons/ai";
+import { Navigate, NavLink } from "react-router-dom";
 
 interface SidebarProps {
   children?: React.ReactNode;
@@ -98,14 +99,17 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         </span>
       </div>
       <div className="sidebar__content">
-        <div className="sidebar__item">
-          <span className="sidebar__itemWrapper">
-            <span className="sidebar__icon">
-              <MdDashboard />
+        <NavLink to="/dashboard">
+          <div className="sidebar__item">
+            <span className="sidebar__itemWrapper">
+              <span className="sidebar__icon">
+                <MdDashboard />
+              </span>
+              <span className="sidebar__text">Dashboard</span>
             </span>
-            <span className="sidebar__text">Dashboard</span>
-          </span>
-        </div>
+          </div>
+        </NavLink>
+
         <div className="sidebar__item">
           <span className="sidebar__itemWrapper">
             <span className="sidebar__icon">

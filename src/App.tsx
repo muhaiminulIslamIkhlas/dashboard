@@ -1,91 +1,36 @@
-import React, { useEffect, useState } from "react";
-import Sidebar from "./components/sidebar/sidebar";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import MainBody from "./components/mainBody/mainBody";
-import http from './services/httpServices';
-import  config  from "./config.json";
-import Notiflix from 'notiflix';
+import Dashboard from "./pages/dashboard/dashboard";
+import Login from "./pages/login/login";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<any>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const { data: response } = await http.get(config.apiEndpoint);
-        setData(response);
-      } catch (error: any) {
-        console.error(error);
-      }
-      setLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
-  const handleAdd = async () => {
-    const obj = { title: "a", body: "b" };
-    const { data: post } = await http.post(config.apiEndpoint, obj);
-    console.log(post);
-  };
-
-  const handleDelete = async (post: any) => {
-    Notiflix.Report.success(
-      'Notiflix Success',
-      '"Do not try to become a person of success but try to become a person of value." <br/><br/>- Albert Einstein',
-      'Okay',
-      );
-    console.log("start");
-    const originalPosts = data;
-    const posts = data.filter((p: any) => p.id !== post.id);
-    setData(posts);
-    try {
-      await http.delete(config.apiEndpoint + "/" + post.id);
-    } catch (ex: any) {
-      if (ex.response && ex.response.status === 404) {
-        alert("The post has already deleted");
-      } else {
-        console.log(ex);
-        alert("An unexpected error occured.");
-      }
-
-      setData(originalPosts);
-      console.log("complete");
-    }
-    console.log("complete");
-  };
-
+const App: React.FC = () => {
+  const token =
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2p3dFwvcHVibGljXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjUzNzI0MzEzLCJleHAiOjE2NTM3Mjc5MTMsIm5iZiI6MTY1MzcyNDMxMywianRpIjoicGJMb0lMc2R2eFBYRXpiZiIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.8irVtWpQD69M9H876BjrybKd0V9gsYGQ5pCwThwixOk";
+  // axios.defaults.headers.common = {'Authorization': `bearer ${token}`}
   return (
     <div className="App">
-      <div className="app__wrapper">
-        <div>
-          {loading && <div>Loading</div>}
-          {!loading && (
-            <div>
-              <h2>Doing stuff with data</h2>
-              {data.map((item: any) => (
-                <div>
-                  <p>{item.title}</p>
-                  <button
-                    onClick={() => {
-                      handleDelete(item);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-          <button onClick={handleAdd}>Add</button>
-        </div>
-        <Sidebar />
-        <MainBody />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Dashboard>
+              <h1>Hello World</h1>
+            </Dashboard>
+          }
+        ></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route
+          path="/*"
+          element={
+            <Dashboard>
+              <h1>Hello World</h1>
+            </Dashboard>
+          }
+        ></Route>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

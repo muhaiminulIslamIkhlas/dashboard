@@ -1,7 +1,7 @@
 .mainBody {
     margin-top: 10px;
     padding-right: 10px;
-    width: 100%;    
+    width: 100%;
 }
 
 .card {
@@ -10,6 +10,7 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 100%;
     background-color: #fff;
+    padding: 10px 20px;
 }
 
 .topBar {
@@ -23,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
 
-    &__userInfo{
+    &__userInfo {
         display: flex;
     }
 
@@ -49,12 +50,12 @@
         color: #6c757d;
     }
 
-    &__link{
+    &__link {
         display: flex;
         width: 66%;
     }
 
-    &__badgeContainer{
+    &__badgeContainer {
         margin-right: 8px;
     }
 
@@ -64,26 +65,27 @@
         padding: 6px 12px;
         border-radius: 8px;
 
-        &__icon{
+        &__icon {
             margin-right: 4px;
+            display: inline-block;
+            height: 18px;
         }
 
         &__text {
             font-size: 12.5px;
-            font-weight: bold;
+            font-weight: 500;
             position: relative;
             top: -3px;
         }
     }
 
-    &__notification{
+    &__notification {
         font-size: 25px;
-
-        &__item{
-            &:not(:last-child){
+        &__item {
+            cursor: pointer;
+            &:not(:last-child) {
                 margin-right: 10px;
             }
-            cursor: pointer;
         }
     }
 }
