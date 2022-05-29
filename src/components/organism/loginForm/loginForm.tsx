@@ -50,7 +50,7 @@ const LoginForm = () => {
       console.log(errors);
       return;
     }
-    Loading.hourglass()
+    Loading.dots();
     await authServices.login(data.username, data.password);
     navigate('/')
     Loading.remove();

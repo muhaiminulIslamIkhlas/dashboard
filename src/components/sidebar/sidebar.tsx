@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./sidebar.scss";
 import { MdDashboard } from "react-icons/md";
-import { FaHospitalUser } from "react-icons/fa";
+import { BsNewspaper } from "react-icons/bs";
 import { FaLayerGroup } from "react-icons/fa";
 import { MdRedeem } from "react-icons/md";
 import { SiBbciplayer } from "react-icons/si";
@@ -109,15 +109,16 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
             </span>
           </div>
         </NavLink>
-
-        <div className="sidebar__item">
-          <span className="sidebar__itemWrapper">
-            <span className="sidebar__icon">
-              <FaHospitalUser />
+        <NavLink to="/news">
+          <div className="sidebar__item">
+            <span className="sidebar__itemWrapper">
+              <span className="sidebar__icon">
+                <BsNewspaper />
+              </span>
+              <span className="sidebar__text">News</span>
             </span>
-            <span className="sidebar__text">Dashboard Booking</span>
-          </span>
-        </div>
+          </div>
+        </NavLink>
         <div className="sidebar__item">
           <span className="sidebar__itemWrapper">
             <span className="sidebar__icon">
