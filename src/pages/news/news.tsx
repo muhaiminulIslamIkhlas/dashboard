@@ -1,12 +1,13 @@
-import React from 'react'
-import './news.scss'
+import React from "react";
+import Admin from "../../components/templates/dashboard/admin";
+import "./news.scss";
 
- function News() {
+function News() {
   return (
-    <div className='p-news'>
-        This is News page
-    </div>
-  )
+    <Admin>
+      <div className="p-news">This is News page</div>
+    </Admin>
+  );
 }
 
 export default News;
